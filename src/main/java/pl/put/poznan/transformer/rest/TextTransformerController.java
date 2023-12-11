@@ -1,46 +1,45 @@
 package pl.put.poznan.transformer.rest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.transformer.logic.TextTransformer;
-
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Arrays;
 
-
+import java.util.List;
+;
 @RestController
-@RequestMapping("/{text}")
+@RequestMapping("/api/transform")
 public class TextTransformerController {
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformerController.class);
 
-    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public String get(@PathVariable String text,
-                              @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
 
-        // log the parameters
-        logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
 
-        // perform the transformation, you should run your logic here, below is just a silly example
-        TextTransformer transformer = new TextTransformer(transforms);
-        return transformer.transform(text);
+    @GetMapping(produces = "application/json")
+    public List<String> getAvailableOperations() {
+        return Arrays.asList("upper", "lower", "capitalize"); // Dodaj inne dostępne operacje
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public String post(@PathVariable String text,
-                      @RequestBody String[] transforms) {
-
-        // log the parameters
+    @PostMapping(consumes = "application/json", produces = "application/json")
+    public Map<String, Object> post(@RequestBody Map<String, Object> request) {
+        String text = (String) request.get("text");
+        String[] transforms = ((String) request.get("transforms")).split(",");
         logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
+        logger.debug(String.join(",", transforms));
 
-        // perform the transformation, you should run your logic here, below is just a silly example
         TextTransformer transformer = new TextTransformer(transforms);
-        return transformer.transform(text);
+        String transformedText = transformer.transform(text);
+
+        return createResponseMap(transformedText, transforms);
     }
 
-
-
+    private Map<String, Object> createResponseMap(String text, String[] transforms) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("text", text);
+        response.put("transforms", transforms);
+        return response;
+    }
 }
-
-
