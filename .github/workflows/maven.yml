@@ -24,5 +24,8 @@ jobs:
           cache: maven
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
-      - name: Build to jar
-        run: mvn --batch-mode --update-snapshots jar:jar
+      - run: mkdir staging && cp target/*.jar staging
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Package
+          path: staging
