@@ -21,6 +21,8 @@ public class TextTransformer{
                 trText = new ToUpperDecorator(trText);
             if(Objects.equals(tr, "doubleText"))
                 trText = new DoubleTextDecorator(trText);
+            if(Objects.equals(tr, "numbersToText"))
+                trText = new NumbersToTextDecorator(trText);
 
         }
         return trText.decorate();

@@ -8,6 +8,20 @@ class TextTransformerTest {
     TextTransformer transformer;
 
     @Test
+    public void testEmpty(){
+        String[] transforms = {};
+        transformer = new TextTransformer(transforms);
+        assertEquals(transformer.transform("abc"), "abc");
+    }
+
+    @Test
+    public void testNumbersToText(){
+        String[] transforms = {"numbersToText"};
+        transformer = new TextTransformer(transforms);
+        assertEquals(transformer.transform("123"), "sto dwadzieścia trzy");
+    }
+
+    @Test
     public void testToUpper(){
         String[] transforms = {"toUpper"};
         transformer = new TextTransformer(transforms);
@@ -26,5 +40,7 @@ class TextTransformerTest {
         transformer = new TextTransformer(transforms);
         assertEquals(transformer.transform("abc"), "ABCABC");
     }
+
+
   
 }
