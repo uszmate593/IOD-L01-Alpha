@@ -1,9 +1,11 @@
 package pl.put.poznan.transformer.logic;
 
+import java.util.Objects;
+
 /**
  * This is just an example to show that the logic should be outside the REST service.
  */
-public class TextTransformer {
+public class TextTransformer{
 
     private final String[] transforms;
 
@@ -12,7 +14,15 @@ public class TextTransformer {
     }
 
     public String transform(String text){
-        // of course, normally it would do something based on the transforms
-        return text.toUpperCase();
+        Text trText = new TextImplementation(text);
+
+        for(String tr:transforms){
+            if(Objects.equals(tr, "toUpper"))
+                trText = new ToUpperDecorator(trText);
+            if(Objects.equals(tr, "doubleText"))
+                trText = new DoubleTextDecorator(trText);
+
+        }
+        return trText.decorate();
     }
 }
