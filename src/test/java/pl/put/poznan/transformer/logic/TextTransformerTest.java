@@ -18,7 +18,7 @@ class TextTransformerTest {
     public void testNumbersToText(){
         String[] transforms = {"numbersToText"};
         transformer = new TextTransformer(transforms);
-        assertEquals(transformer.transform("123"), "sto dwadzieścia trzy");
+        assertEquals(transformer.transform("123"), "sto dwadzieścia trzy ");
     }
 
     @Test
