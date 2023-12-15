@@ -1,7 +1,7 @@
 package pl.put.poznan.transformer.logic;
 
 public abstract class AbstractDecorator implements Text{
-    private Text text;
+    protected Text text;
 
     public AbstractDecorator(Text text) {
         this.text = text;
