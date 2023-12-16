@@ -21,7 +21,7 @@ public class FullToAbberrationDecorator extends AbstractDecorator
         predefiniowane_skroty.put("wyżej wymienione", "ww.");
         predefiniowane_skroty.put("według", "wg");
 
-        String tmp = String.valueOf(this.text);
+        String tmp = String.valueOf(super.decorate());
         for (Map.Entry<String, String> entry : predefiniowane_skroty.entrySet()) {
             tmp = tmp.replaceAll(entry.getKey(), entry.getValue());
         }
