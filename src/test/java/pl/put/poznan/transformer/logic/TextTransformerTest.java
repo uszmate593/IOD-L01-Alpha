@@ -28,14 +28,9 @@ class TextTransformerTest {
     }
     @Test
     public void testDecorate() {
-        // Arrange
         Text text = new TextImplementation("MirEk");
         ToReversed inverseDecorator = new ToReversed(text);
-
-        // Act
         String result = inverseDecorator.decorate();
-
-        // Assert
         assertEquals("KerIm", result);
     }
   
