@@ -7,7 +7,6 @@ public class ToReversed extends AbstractDecorator {
     public ToReversed(Text text) {
         super(text);
     }
-
     @Override
     public String decorate() {
         String originalText = super.decorate();
