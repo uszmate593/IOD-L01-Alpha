@@ -16,7 +16,7 @@ public class AbberrationToFullDecorator extends AbstractDecorator
     @Override
     public String decorate()
     {
-        String[] words = text.decorate().split( " ");
+        String[] words = super.decorate().split( " ");
         Map<String, String> abbreviations = new HashMap<String, String>();
         abbreviations.put("PUT", "Poznan University of Technology");
 
