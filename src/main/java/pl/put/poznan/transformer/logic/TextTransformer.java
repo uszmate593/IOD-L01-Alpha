@@ -25,6 +25,8 @@ public class TextTransformer{
                 trText = new ToLowerDecorator(trText);
             if(Objects.equals(tr, "toCapitalize"))
                 trText = new ToCapitalizeDecorator(trText);
+            if(Objects.equals(tr, "toReversed"))
+                trText = new ToReverse(trText);
 
         }
         return trText.decorate();
