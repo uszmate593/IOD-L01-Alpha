@@ -26,5 +26,17 @@ class TextTransformerTest {
         transformer = new TextTransformer(transforms);
         assertEquals(transformer.transform("abc"), "ABCABC");
     }
+    @Test
+    public void testDecorate() {
+        // Arrange
+        Text text = new TextImplementation("MirEk");
+        ToReversed inverseDecorator = new ToReversed(text);
+
+        // Act
+        String result = inverseDecorator.decorate();
+
+        // Assert
+        assertEquals("KerIm", result);
+    }
   
 }
