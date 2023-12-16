@@ -21,6 +21,10 @@ public class TextTransformer{
                 trText = new ToUpperDecorator(trText);
             if(Objects.equals(tr, "doubleText"))
                 trText = new DoubleTextDecorator(trText);
+            if(Objects.equals(tr, "toLower"))
+                trText = new ToLowerDecorator(trText);
+            if(Objects.equals(tr, "toCapitalize"))
+                trText = new ToCapitalizeDecorator(trText);
 
         }
         return trText.decorate();
