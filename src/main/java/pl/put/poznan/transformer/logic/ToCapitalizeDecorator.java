@@ -9,7 +9,7 @@ public class ToCapitalizeDecorator extends AbstractDecorator{
     @Override
     public String decorate(){
         StringBuilder result = new StringBuilder();
-        String[] slowa = text.decorate().split("\\s");
+        String[] slowa = super.decorate().split("\\s");
         for (String slowo : slowa){
             if(slowo.isEmpty()) {
                 result.append(" ");
