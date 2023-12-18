@@ -25,6 +25,8 @@ public class TextTransformer{
                 trText = new ToLowerDecorator(trText);
             if(Objects.equals(tr, "toCapitalize"))
                 trText = new ToCapitalizeDecorator(trText);
+            if(Objects.equals(tr, "abberrationExtend"))
+                trText = new AbberrationToFullDecorator(trText);
 
         }
         return trText.decorate();
