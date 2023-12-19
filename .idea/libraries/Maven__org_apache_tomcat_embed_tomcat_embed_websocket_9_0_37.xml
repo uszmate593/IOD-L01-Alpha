@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.37">
+  <library name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.37" type="java-imported" external-system-id="Maven">
+    <properties groupId="org.apache.tomcat.embed" artifactId="tomcat-embed-websocket" version="9.0.37" />
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.37/tomcat-embed-websocket-9.0.37.jar!/" />
     </CLASSES>

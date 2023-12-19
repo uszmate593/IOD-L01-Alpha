@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="Maven: org.ow2.asm:asm:5.0.4">
+  <library name="Maven: org.ow2.asm:asm:5.0.4" type="java-imported" external-system-id="Maven">
+    <properties groupId="org.ow2.asm" artifactId="asm" version="5.0.4" />
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar!/" />
     </CLASSES>

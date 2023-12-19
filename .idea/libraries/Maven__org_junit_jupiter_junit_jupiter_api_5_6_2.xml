@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="Maven: org.junit.jupiter:junit-jupiter-api:5.6.2">
+  <library name="Maven: org.junit.jupiter:junit-jupiter-api:5.6.2" type="java-imported" external-system-id="Maven">
+    <properties groupId="org.junit.jupiter" artifactId="junit-jupiter-api" version="5.6.2" />
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar!/" />
     </CLASSES>
