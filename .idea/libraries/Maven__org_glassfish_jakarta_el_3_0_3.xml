@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="Maven: org.glassfish:jakarta.el:3.0.3">
+  <library name="Maven: org.glassfish:jakarta.el:3.0.3" type="java-imported" external-system-id="Maven">
+    <properties groupId="org.glassfish" artifactId="jakarta.el" version="3.0.3" />
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/jakarta.el/3.0.3/jakarta.el-3.0.3.jar!/" />
     </CLASSES>

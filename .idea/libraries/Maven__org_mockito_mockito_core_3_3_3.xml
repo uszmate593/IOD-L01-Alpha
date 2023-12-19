@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="Maven: org.mockito:mockito-core:3.3.3">
+  <library name="Maven: org.mockito:mockito-core:3.3.3" type="java-imported" external-system-id="Maven">
+    <properties groupId="org.mockito" artifactId="mockito-core" version="3.3.3" />
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/mockito/mockito-core/3.3.3/mockito-core-3.3.3.jar!/" />
     </CLASSES>

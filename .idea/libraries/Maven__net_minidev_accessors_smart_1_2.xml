@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="Maven: net.minidev:accessors-smart:1.2">
+  <library name="Maven: net.minidev:accessors-smart:1.2" type="java-imported" external-system-id="Maven">
+    <properties groupId="net.minidev" artifactId="accessors-smart" version="1.2" />
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar!/" />
     </CLASSES>

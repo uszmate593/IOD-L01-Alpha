@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ioprojectarchitecture" target="11" />
+      <module name="text-transformer" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

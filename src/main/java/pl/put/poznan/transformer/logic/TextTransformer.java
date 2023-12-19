@@ -27,7 +27,7 @@ public class TextTransformer{
                 trText = new ToCapitalizeDecorator(trText);
             if(Objects.equals(tr, "abberrationExtend"))
                 trText = new AbberrationToFullDecorator(trText);
-            if(Objects.equals(tr, "toReversed"))
+            if(Objects.equals(tr, "toReverse"))
                 trText = new ToReverse(trText);
 
         }

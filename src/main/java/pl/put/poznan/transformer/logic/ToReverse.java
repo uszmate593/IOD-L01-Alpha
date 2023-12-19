@@ -2,22 +2,49 @@ package pl.put.poznan.transformer.logic;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa {@code ToReverse} jest dekoratorem, który odwraca kolejność znaków
+ * w tekście uzyskanym od obiektu {@link Text}, który jest opakowany.
+ * Rozszerza klasę {@link AbstractDecorator}.
+ *
+ * Odwracanie jest wykonywane przy zachowaniu oryginalnej wielkości znaków.
+ *
+ * @author Kacper Woźniak
+ * @version 1.0
+ * @since 2023-12-19
+ */
 public class ToReverse extends AbstractDecorator {
 
+    /**
+     * Konstruuje obiekt {@code ToReverse} z określonym obiektem {@link Text} do udekorowania.
+     *
+     * @param text Obiekt {@link Text}, który ma zostać udekorowany.
+     */
     public ToReverse(Text text) {
         super(text);
     }
+
+    /**
+     * Dekoruje tekst, odwracając kolejność jego znaków przy zachowaniu oryginalnej wielkości.
+     *
+     * @return Odwrócony tekst.
+     */
     @Override
     public String decorate() {
         String originalText = super.decorate();
         return inverse(originalText);
     }
-
+    /**
+     * Odwraca kolejność znaków w podanym tekście, zachowując wielkość liter na odpowiednich miejscach.
+     *
+     * @param text Tekst do odwrócenia.
+     * @return Odwrócony tekst.
+     */
     private String inverse(String text) {
         text = text.strip();
 
         if (text.isEmpty()) {
-            return "0";
+            return "";
         }
 
         int length = text.length();
