@@ -3,16 +3,33 @@ package pl.put.poznan.transformer.logic;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Klasa ta odpowiada za przekształcenie obecnych
+ * w tekście skrótów do ich pełnej wersji.
+ *
+ *
+ * @author Mateusz Barski
+ */
 public class AbberrationToFullDecorator extends AbstractDecorator
 {
 
 
-
+    /**
+     * Konstruktor klasy, przyjmujący jeden argument.
+     *
+     * @param text Konstruktor klasy przyjmuje obiekt klasy TextImplementation, który chcemy przekształcić.
+     */
     public AbberrationToFullDecorator(Text text)
     {
         super(text);
     }
 
+    /**
+     * Matoda wykonująca przekształcenie podanego w konstruktorze klasy tekstu.
+     * Przekształcenie to polega na rozwinięciu skrótów obecnych w tekście, zgodnie z obecnym w programie słowniku skrótów.
+     *
+     * @return Zwraca obiekt klasy String zawierający przekształcony tekst.
+     */
     @Override
     public String decorate()
     {
@@ -27,6 +44,11 @@ public class AbberrationToFullDecorator extends AbstractDecorator
         return result;
     }
 
+    /**
+     * Metoda definiująca słownik rozwinięć skrótów i zwracająca go.
+     *
+     * @return Zwraca obiekt klasy HashMap zawierający zdefiniowane skróty wraz z ich rozwinięciami.
+     */
     private Map<String, String> loadAbberrationDictionary()
     {
         Map<String, String> dictionary = new HashMap<String, String>();
