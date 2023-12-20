@@ -29,7 +29,10 @@ public class TextTransformer{
                 trText = new AbberrationToFullDecorator(trText);
             if(Objects.equals(tr, "toReverse"))
                 trText = new ToReverse(trText);
-
+            if(Objects.equals(tr,"numbersToText"))
+                trText = new NumbersToTextDecorator(trText);
+            if(Objects.equals(tr,"toAbberration"))
+                trText = new FullToAbberrationDecorator(trText);
         }
         return trText.decorate();
     }
