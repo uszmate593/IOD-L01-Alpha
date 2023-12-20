@@ -2,6 +2,14 @@ package pl.put.poznan.transformer.logic;
 
 import java.util.Objects;
 
+
+/**
+ * Klasa ta odpowiada za przekształcenie liczb
+ * z postaci numercznej na tekstową.
+ *
+ *
+ * @author Mikołaj Lewandowski
+ */
 public class NumbersToTextDecorator extends AbstractDecorator{
 
     private static final String[] unity = {"", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć",
@@ -15,11 +23,21 @@ public class NumbersToTextDecorator extends AbstractDecorator{
     private static final String[] thousands = {"", "tysiąc", "dwa tysiące", "trzy tysiące", "cztery tysiące",
             "pięć tysięcy", "sześć tysięcy", "siedem tysięcy", "osiem tysięcy", "dziewięć tysięcy"};
 
-
+    /**
+     * Konstruktor klasy, przyjmujący jeden argument.
+     *
+     * @param text Konstruktor klasy przyjmuje obiekt klasy TextImplementation, który chcemy przekształcić.
+     */
     public NumbersToTextDecorator(Text text) {
         super(text);
     }
 
+    /**
+     * Matoda odpowiedzialna za rodzielenie tekstu na wyrazy
+     * 
+     *
+     * @return Zwraca obiekt klasy String zawierający przekształcony tekst.
+     */
     @Override
     public String decorate(){
         String text = super.decorate();
@@ -36,6 +54,13 @@ public class NumbersToTextDecorator extends AbstractDecorator{
 
         return result.toString().strip();
     }
+
+    /**
+     * Matoda odpowiedzialna za rodzielenie tekstu na wyrazy
+     * 
+     * @param number Funkcja przyjmuje słowo do zamiany
+     * @return Zwraca przetworzone słowo
+     */
 
     private String numberToText(String number) {
         String[] digits = number.split("");
