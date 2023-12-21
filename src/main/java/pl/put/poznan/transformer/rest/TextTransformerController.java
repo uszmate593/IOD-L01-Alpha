@@ -15,7 +15,7 @@ public class TextTransformerController {
     @RequestMapping(value = "/text/{text}",method = RequestMethod.GET)
     public String getText(@PathVariable String text,
                               @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
-        logger.info("Przychodzi zapytanie GET na endpoint '/{text}'");
+        logger.info("Przychodzi zapytanie GET na endpoint '/text'");
         // log the parameters
         logger.debug("Tekst: {}", text);
         logger.debug("Transformacje: {}", Arrays.toString(transforms));
@@ -29,7 +29,7 @@ public class TextTransformerController {
     public String postText(@PathVariable String text,
                       @RequestBody String[] transforms) {
 
-        logger.info("Przychodzi zapytanie POST na endpoint '/{text}'");
+        logger.info("Przychodzi zapytanie POST na endpoint '/text'");
         logger.debug("Przesłany tekst do transformacji: {}",text);
         logger.debug("Przesłane transformacje do wykonania na tekście: {}",Arrays.toString(transforms));
 
@@ -41,7 +41,7 @@ public class TextTransformerController {
     @RequestMapping(value = "/json/{text}",method = RequestMethod.GET, produces = "application/json")
     public String getJSON(@PathVariable String text,
                           @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
-        logger.info("Przychodzi zapytanie GET na endpoint '/{text}'");
+        logger.info("Przychodzi zapytanie GET na endpoint '/json");
         // log the parameters
         logger.debug("Tekst: {}", text);
         logger.debug("Transformacje: {}", Arrays.toString(transforms));
@@ -54,7 +54,7 @@ public class TextTransformerController {
     public String postJSON(@PathVariable String text,
                            @RequestBody String[] transforms) {
 
-        logger.info("Przychodzi zapytanie POST na endpoint '/{text}'");
+        logger.info("Przychodzi zapytanie POST na endpoint '/json'");
         logger.debug("Przesłany tekst do transformacji: {}",text);
         logger.debug("Przesłane transformacje do wykonania na tekście: {}",Arrays.toString(transforms));
 
