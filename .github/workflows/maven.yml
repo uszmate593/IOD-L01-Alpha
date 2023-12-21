@@ -25,7 +25,7 @@ jobs:
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
       - run: mvn javadoc:javadoc
-      - run: mkdir staging && cp target/*.jar staging && cp -r site staging/site
+      - run: mkdir staging && cp target/*.jar staging && cp -r target/site staging/site
       - uses: actions/upload-artifact@v3
         with:
           name: Package
