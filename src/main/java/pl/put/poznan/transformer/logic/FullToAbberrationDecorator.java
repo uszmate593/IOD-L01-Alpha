@@ -3,14 +3,31 @@ package pl.put.poznan.transformer.logic;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Klasa ta odpowiada za zwijanie konkretnych sekwencji wyrazów do skrótów.
+ *
+ *
+ * @author Emil Grzybowski
+ */
 public class FullToAbberrationDecorator extends AbstractDecorator
 {
-
+    /**
+     * Konstruktor klasy, przyjmujący jeden argument.
+     *
+     * @param text obiekt klasy TextImplementation, który chcemy przekształcić.
+     */
     public FullToAbberrationDecorator(Text text)
     {
         super(text);
     }
 
+    /**
+     * Matoda wykonująca przekształcenie tekstu.
+     * Przekształcenie to polega na zwijaniu konkretnych sekwencji wyrazów do skrótów,
+     * zgodnie z obecnym w programie słownikiem skrótów.
+     *
+     * @return Zwraca obiekt klasy String zawierający przekształcony tekst.
+     */
     @Override
     public String decorate()
     {
