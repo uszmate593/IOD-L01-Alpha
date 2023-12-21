@@ -48,7 +48,7 @@ public class TextTransformerController {
 
         // perform the transformation, you should run your logic here, below is just a silly example
         TextTransformer transformer = new TextTransformer(transforms);
-        return transformer.transform(text);
+        return "{\"text\":\""+transformer.transform(text)+"\"}";
     }
     @RequestMapping(value = "/json/{text}",method = RequestMethod.POST, produces = "application/json")
     public String postJSON(@PathVariable String text,
@@ -60,7 +60,7 @@ public class TextTransformerController {
 
 
         TextTransformer transformer = new TextTransformer(transforms);
-        return transformer.transform(text);
+        return "{\"text\":\""+transformer.transform(text)+"\"}";
     }
 
 
