@@ -41,7 +41,11 @@ public class TextTransformerController {
     @RequestMapping(value = "/json/{text}",method = RequestMethod.GET, produces = "application/json")
     public String getJSON(@PathVariable String text,
                           @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
+
         logger.info("Przychodzi zapytanie GET na endpoint '/json");
+
+        logger.info("Przychodzi zapytanie GET na endpoint '/json'");
+
         // log the parameters
         logger.debug("Tekst: {}", text);
         logger.debug("Transformacje: {}", Arrays.toString(transforms));

@@ -24,15 +24,9 @@ jobs:
           cache: maven
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
-      - run: mkdir staging && cp target/*.jar staging
+      - run: mvn javadoc:javadoc
+      - run: mkdir staging && cp target/*.jar staging && cp -r target/site staging/site
       - uses: actions/upload-artifact@v3
         with:
           name: Package
           path: staging
-      - name: Deploy JavaDoc 🚀
-        uses: MathieuSoysal/Javadoc-publisher.yml@v2.3.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          javadoc-branch: javadoc
-          java-version: 17
-          target-folder: javadoc 
