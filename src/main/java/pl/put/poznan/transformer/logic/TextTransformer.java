@@ -33,6 +33,8 @@ public class TextTransformer{
                 trText = new NumbersToTextDecorator(trText);
             if(Objects.equals(tr,"toAbberration"))
                 trText = new FullToAbberrationDecorator(trText);
+            if(Objects.equals(tr,"deleteRepetitions"))
+                trText = new DeleteRepetitionsDecorator(trText);
         }
         return trText.decorate();
     }
