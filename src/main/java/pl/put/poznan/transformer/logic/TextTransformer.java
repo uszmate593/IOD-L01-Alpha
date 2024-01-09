@@ -35,6 +35,8 @@ public class TextTransformer{
                 trText = new FullToAbberrationDecorator(trText);
             if(Objects.equals(tr,"toCensor"))
                 trText = new CensorWordsDecorator(trText);
+            if(Objects.equals(tr,"addPunctuation"))
+                trText = new CensorWordsDecorator(trText);
         }
         return trText.decorate();
     }
