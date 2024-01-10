@@ -35,6 +35,8 @@ public class TextTransformer{
                 trText = new FullToAbberrationDecorator(trText);
             if(Objects.equals(tr,"toCensor"))
                 trText = new CensorWordsDecorator(trText);
+            if(Objects.equals(tr,"deleteRepetitions"))
+                trText = new DeleteRepetitionsDecorator(trText);
         }
         return trText.decorate();
     }
