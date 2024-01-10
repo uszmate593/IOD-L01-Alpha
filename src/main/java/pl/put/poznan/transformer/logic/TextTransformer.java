@@ -39,6 +39,8 @@ public class TextTransformer{
                 trText = new DeleteRepetitionsDecorator(trText);
             if(Objects.equals(tr,"addPunctuation"))
                 trText = new addPunctuation(trText);
+            if(Objects.equals(tr,"toLatex"))
+                trText = new ToLatexDecorator(trText);
         }
         return trText.decorate();
     }
