@@ -37,6 +37,8 @@ public class TextTransformer{
                 trText = new CensorWordsDecorator(trText);
             if(Objects.equals(tr,"deleteRepetitions"))
                 trText = new DeleteRepetitionsDecorator(trText);
+            if(Objects.equals(tr,"spaceToNewLine"))
+                trText = new SpaceToNewLineDecorator(trText);
         }
         return trText.decorate();
     }
