@@ -1,0 +1,1 @@
+Żeby działało trzeba pobrać wtyczkę Allow CORS do przeglądarki. 
