@@ -1,6 +1,7 @@
 package pl.put.poznan.transformer.logic;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,4 +19,13 @@ class SpaceToNewLineDecoratorTest {
         assertEquals("Litwo!\nOjczyzno\nmoja!\nty\njesteś\njak\nzdrowie.\nIle\ncię\ntrzeba\ncenić,\nten\ntylko\nsię\ndowie,\nKto\ncię\nstracił.\nDziś\npiękność\ntwą\nw\ncałej\nozdobie\nWidzę\ni\nopisuję,\nbo\ntęsknię\npo\ntobie.", decorator.decorate());
     }
 
+    @Test
+    void testDecorateAfterAbberrationToFullDecorator()
+    {
+        AbberrationToFullDecorator mock = Mockito.mock(AbberrationToFullDecorator.class);
+        Mockito.when(mock.decorate()).thenReturn("I study at Poznan University of Technology in Poland.");
+
+        decorator = new SpaceToNewLineDecorator(mock);
+        assertEquals("I\nstudy\nat\nPoznan\nUniversity\nof\nTechnology\nin\nPoland.", decorator.decorate());
+    }
 }
